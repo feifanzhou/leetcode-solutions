@@ -18,6 +18,7 @@ defmodule LeetcodeSolutionsWeb.Router do
 
     get "/", PageController, :index
     get "/problems", ProblemsController, :index
+    get "/problems/:id", ProblemsController, :show
   end
 
   # Other scopes may use custom stacks.

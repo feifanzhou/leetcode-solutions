@@ -7,4 +7,41 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
       {:error, reason} -> text(conn, "Error reading problems readme: " <> Atom.to_string(reason))
     end
   end
+
+  def show(conn, %{"id" => id}) do
+    with {:ok, folder_name} <- folder_name_for_id(id),
+         {:ok, markdown} <-
+           File.read(Path.relative_to_cwd("../problems/" <> folder_name <> "/README.md")) do
+      html(conn, Earmark.as_html!(markdown))
+    else
+      {:error, reason} ->
+        text(conn, "Error reading readme for " <> id <> ": " <> Atom.to_string(reason))
+    end
+  end
+
+  defp folder_name_for_id(id) do
+    with {:ok, ls} <- File.ls(Path.relative_to_cwd("../problems")),
+         folder_name =
+           (if String.match?(id, ~r/^\d+$/) do
+              folder_name_for_number(ls, id)
+            else
+              folder_name_for_slug(ls, id)
+            end) do
+      case folder_name do
+        nil -> {:error, :enoent}
+        folder_name -> {:ok, folder_name}
+      end
+    else
+      {:error, e} -> {:error, e}
+    end
+  end
+
+  defp folder_name_for_number(ls, id_number) do
+    padded_number = String.pad_leading(id_number, 4, "0")
+    Enum.find(ls, fn l -> String.starts_with?(l, padded_number) end)
+  end
+
+  defp folder_name_for_slug(ls, id_slug) do
+    Enum.find(ls, fn l -> String.ends_with?(l, id_slug) end)
+  end
 end
