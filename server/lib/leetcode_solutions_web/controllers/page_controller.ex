@@ -3,7 +3,7 @@ defmodule LeetcodeSolutionsWeb.PageController do
 
   def index(conn, _params) do
     case File.read(Path.relative_to_cwd("../README.md")) do
-      {:ok, markdown} -> html(conn, Earmark.as_html!(markdown))
+      {:ok, markdown} -> render(conn, "index.html", markdown: markdown)
       {:error, reason} -> text(conn, "Error reading root readme: " <> Atom.to_string(reason))
     end
   end

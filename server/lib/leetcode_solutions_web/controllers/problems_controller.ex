@@ -3,7 +3,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
 
   def index(conn, _params) do
     case File.read(Path.relative_to_cwd("../problems/README.md")) do
-      {:ok, markdown} -> html(conn, Earmark.as_html!(markdown))
+      {:ok, markdown} -> render(conn, "index.html", markdown: markdown)
       {:error, reason} -> text(conn, "Error reading problems readme: " <> Atom.to_string(reason))
     end
   end
@@ -13,7 +13,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
          folder_path = Path.relative_to_cwd(Path.join("../problems", folder_name)),
          {:ok, markdown} <-
            LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md") do
-      html(conn, Earmark.as_html!(markdown))
+      render(conn, "show.html", markdown: markdown)
     else
       {:error, reason} ->
         text(conn, "Error reading readme for " <> id <> ": " <> Atom.to_string(reason))
