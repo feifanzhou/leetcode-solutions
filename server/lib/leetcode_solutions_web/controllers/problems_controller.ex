@@ -10,8 +10,9 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
 
   def show(conn, %{"id" => id}) do
     with {:ok, folder_name} <- folder_name_for_id(id),
+         folder_path = Path.relative_to_cwd(Path.join("../problems", folder_name)),
          {:ok, markdown} <-
-           File.read(Path.relative_to_cwd("../problems/" <> folder_name <> "/README.md")) do
+           LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md") do
       html(conn, Earmark.as_html!(markdown))
     else
       {:error, reason} ->

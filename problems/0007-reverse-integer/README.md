@@ -13,7 +13,7 @@ The modulo operator (`%`) returns the [remainder that would result from a divisi
 Once we have this array, we can use place-value math to recombine them into the final number. For example, if we have the digits `[1, 2, 3, 4]` in an array, and want to combine them into the number `1234`, we'd multiple the `1` by 10<sup>3</sup>, the `2` by 10<sup>2</sup>, the `3` by 10<sup>1</sup>, and the `4` by 10<sup>0</sup>, and add all that together. If `n` is the number of digits, each digit at index `I` gets multiplied by 10<sup>n - 1 - I</sup>. 
 
 ```ruby
-@cat 2-reverse-a-digit-array
+@cat 2-reverse-a-digit-array.rb
 ```
 
 # Solution 3: Digit By Digit
