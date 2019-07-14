@@ -1,6 +1,6 @@
 <section>
   <article>
-    <%= raw(Earmark.as_html!(@markdown)) %>
+    <%= raw(Earmark.as_html!(@markdown, %Earmark.Options{code_class_prefix: "language-"})) %>
   </article>
 
   <article>
