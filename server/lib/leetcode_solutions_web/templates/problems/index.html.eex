@@ -5,9 +5,14 @@
 
   <article>
     <h1>Problems List</h1>
-    <ol>
+    <ol class="problems-list">
       <%= for %{name: name, slug: slug, number: number} <- @problems do %>
-        <li><a href="<%= Routes.problems_path(@conn, :show, slug) %>"><%= number %> <%= name %></a></li>
+        <li>
+          <a href="<%= Routes.problems_path(@conn, :show, slug) %>">
+            <span class="problem-number"><%= number %></span>:
+            <span class="problem-name"><%= name %></span>
+          </a>
+        </li>
       <% end %>
     </ol>
   </article>
