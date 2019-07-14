@@ -2,4 +2,13 @@
   <article>
     <%= raw(Earmark.as_html!(@markdown)) %>
   </article>
+
+  <article>
+    <h1>Problems List</h1>
+    <ol>
+      <%= for %{name: name, slug: slug, number: number} <- @problems do %>
+        <li><a href="<%= Routes.problems_path(@conn, :show, slug) %>"><%= number %> <%= name %></a></li>
+      <% end %>
+    </ol>
+  </article>
 </section>

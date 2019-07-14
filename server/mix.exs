@@ -43,7 +43,8 @@ defmodule LeetcodeSolutions.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:earmark, "1.3.2"}
+      {:earmark, "1.3.2"},
+      {:recase, "0.6.0"}
     ]
   end
 
