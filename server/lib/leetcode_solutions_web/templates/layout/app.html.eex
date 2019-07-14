@@ -15,8 +15,8 @@
             <li><a href="<%= Routes.problems_path(@conn, :index) %>">Problems</a></li>
           </ul>
         </nav>
-        <a href="<%= Routes.page_path(@conn, :index) %>" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
+        <a href="<%= Routes.page_path(@conn, :index) %>">
+          <h1>Leetcode Solutions</h1>
         </a>
       </section>
     </header>
