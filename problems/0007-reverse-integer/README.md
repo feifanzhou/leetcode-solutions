@@ -24,4 +24,5 @@ If we can't (or don't want to) allocate an additional array, we can do something
 ```
 
 **Runtime:** This solution is `O(log(x))` because both loops run as many iterations as there are digits in `x`, and the work within both loops runs in constant time.
+
 **Memory:** This solution uses a constant amount of memory.

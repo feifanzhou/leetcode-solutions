@@ -8,18 +8,32 @@ html, body {
 body {
   line-height: 1.7rem;
   margin: 1em;
+  /* Add space at the bottom to allow links at the bottom to be reachable on iOS */
+  padding-bottom: 3rem;
+}
+
+a {
+  color: #2aa198;
+  text-decoration: none;
 }
 
 code {
   font-family: "Fira Code",SFMono-Regular,Consolas,"Liberation Mono",Monaco,monospace;
+  font-size: 0.95rem;
+}
+
+code.inline {
+  background: #fdf6e3;
+  border-radius: 0.3rem;
+  color:#657b83;
+  padding: 0 0.3rem;
 }
 
 pre {
-  border-left: 0.4rem solid #444;
+  border-left: 0.4rem solid #073642;
   border-radius: 0.3rem;
   line-height: 1.5rem;
   padding-left: 1rem;
-  padding-top: 1.7rem;padding-left: 1rem;
 }
 
 nav {
@@ -35,8 +49,21 @@ nav ul li {
   display: inline-block;
 }
 
+main a {
+  transition: background 0.2s;
+}
+
+main a:hover {
+  background: #fdf6e3;
+}
+
+main a:visited {
+  /* color: #6c71c4; */
+}
+
 main h1 {
   font-size: 2rem;
+  line-height: 1.4em;
   margin-bottom: 0.5rem;
 }
 
@@ -55,17 +82,9 @@ main h1 {
   margin-bottom: 0;
 }
 
-.navigation a {
-  text-decoration: none;
-}
-
 .problems-list {
   list-style: none;
   padding-left: 0;
-}
-
-.problems-list a {
-  text-decoration: none;
 }
 
 .problems-list .problem-number {
@@ -73,4 +92,5 @@ main h1 {
   text-align: right;
   width: 30px;
 }
+
 

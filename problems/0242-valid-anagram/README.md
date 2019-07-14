@@ -10,6 +10,7 @@ One simple optimization we can make is to return `false` if the two strings are 
 ```
 
 **Runtime:** If we assume all operations on `Hash`es run in constant time, then this algorithm runs in `O(s + t)` (where `s` and `t` are the lengths of the respective strings), since `character_count_hash` loops through each character in `s`, and then `t`, and performs constant work in each case. This remains true if `Hash` equality is implemented as a loop through all the keys in each hash.
+
 **Memory:** This solution requires storing an additional hash for each string. In the worst case, no characters are repeated, which means each hash contains as many key-value pairs as there are letters. Assuming each key-value pair takes up a constant amount of storage (a letter for the key and an integer for the value), the storage requirement would also be `O(s + t)`. 
 
 ## Follow up
