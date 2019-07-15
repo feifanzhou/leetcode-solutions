@@ -18,6 +18,7 @@ defmodule LeetcodeSolutionsWeb.Router do
 
     get "/", PageController, :index
     get "/problems", ProblemsController, :index
+    get "/problemset/all", ProblemsController, :index
     get "/problems/:id", ProblemsController, :show
     get "/request/:id", ProblemsController, :show
     post "/request/:id", ProblemsController, :request
