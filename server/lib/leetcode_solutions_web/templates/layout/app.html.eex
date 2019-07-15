@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= [assigns[:title] || nil, "Leetcode Solutions"] |> Enum.reject(&is_nil/1) |> Enum.join(" | ") %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" id="prism-theme" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-solarizedlight.min.css" />
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-solarizedlight.min.css" rel="stylesheet" />
   </head>
   <body>
     <header>

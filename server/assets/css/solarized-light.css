@@ -3,7 +3,7 @@ a {
 }
 
 button {
-  background: #fdf6e3;
+  background: #fdf6e3 !important;
   border: 1px solid transparent;
   border-radius: 0.3rem;
   box-shadow: 0 1px 3px 2px #eee8d5;
