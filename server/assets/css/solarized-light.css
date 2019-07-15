@@ -1,0 +1,31 @@
+a {
+  color: #2aa198;
+}
+
+button {
+  background: #fdf6e3;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 3px 2px #eee8d5;
+  color: #2aa198;
+}
+button:hover {
+  box-shadow: 0 3px 5px 3px #eee8d5;
+}
+button:active {
+  background: #eee8d5;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.05) inset;
+}
+
+code.inline {
+  background: #fdf6e3;
+  color:#657b83;
+}
+
+pre {
+  border-left: 0.4rem solid #073642;
+}
+
+main a:hover {
+  background: #fdf6e3;
+}
