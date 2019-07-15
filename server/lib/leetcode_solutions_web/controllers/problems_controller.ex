@@ -4,21 +4,41 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
 
   def index(conn, _params) do
     case File.read(Path.relative_to_cwd("../problems/README.md")) do
-      {:ok, markdown} -> render(conn, "index.html", title: "Problems", markdown: markdown, problems: ProblemsList.list())
-      {:error, reason} -> text(conn, "Error reading problems readme: " <> Atom.to_string(reason))
+      {:ok, markdown} ->
+        render(conn, "index.html",
+          title: "Problems",
+          markdown: markdown,
+          problems: ProblemsList.list()
+        )
+
+      {:error, reason} ->
+        text(conn, "Error reading problems readme: " <> Atom.to_string(reason))
     end
   end
 
   def show(conn, %{"id" => id}) do
-    with folder_name <- problem_for_id(id).folder_name,
+    with problem when not is_nil(problem) <- problem_for_id(id),
+         folder_name <- problem.folder_name,
          folder_path = Path.relative_to_cwd(Path.join("../problems", folder_name)),
          {:ok, markdown} <-
-           LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md") do
-      render(conn, "show.html", title: id, markdown: markdown)
+           LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md"),
+         title <- problem.name <> " (#" <> Integer.to_string(problem.number) <> ")" do
+      render(conn, "show.html", title: title, markdown: markdown)
     else
       {:error, reason} ->
         text(conn, "Error reading readme for " <> id <> ": " <> Atom.to_string(reason))
+
+      nil ->
+        render(conn, "request.html", title: "Request a Solution", id: id)
     end
+  end
+
+  def request(conn, %{"id" => id}) do
+    LeetcodeSolutionsWeb.Emails.request_solution(id) |> LeetcodeSolutionsWeb.Mailer.deliver_now()
+
+    conn
+    |> put_flash(:request_success, "Your request has been noted!")
+    |> redirect(to: Routes.problems_path(conn, :show, id))
   end
 
   defp problem_for_id(id) do

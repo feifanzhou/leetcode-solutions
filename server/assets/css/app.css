@@ -17,6 +17,38 @@ a {
   text-decoration: none;
 }
 
+button {
+  /* Reset everything first */
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal; /* Cannot be changed from `normal` in Firefox 4+. */
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none; /* Corrects inability to style clickable `input` types in iOS */
+
+  background: #fdf6e3;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 3px 2px #eee8d5;
+  color: #2aa198;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  transition: all 0.2s;
+}
+button:hover {
+  box-shadow: 0 3px 5px 3px #eee8d5;
+}
+button:active {
+  background: #eee8d5;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.05) inset;
+}
+
 code {
   font-family: "Fira Code",SFMono-Regular,Consolas,"Liberation Mono",Monaco,monospace;
   font-size: 0.95rem;

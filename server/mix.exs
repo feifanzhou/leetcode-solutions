@@ -20,7 +20,7 @@ defmodule LeetcodeSolutions.MixProject do
   def application do
     [
       mod: {LeetcodeSolutions.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:bamboo, :logger, :runtime_tools]
     ]
   end
 
@@ -44,7 +44,9 @@ defmodule LeetcodeSolutions.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:earmark, "1.3.2"},
-      {:recase, "0.6.0"}
+      {:recase, "0.6.0"},
+      {:bamboo, "1.2.0"},
+      {:bamboo_smtp, "1.7.0"}
     ]
   end
 

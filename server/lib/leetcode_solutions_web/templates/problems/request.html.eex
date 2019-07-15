@@ -1,0 +1,13 @@
+<section>
+  <article>
+    <p>I haven't gotten to writing a solution for this problem yet!</p>
+    <p><a href="<%= Routes.problems_path(@conn, :index) %>">Browse the problems that I've gotten to,</a> or hit the Request button if you'd like to see me get to this one sooner.</p>
+    <%= if get_flash(@conn, :request_success) do %>
+      <p class="alert"><strong><%= get_flash(@conn, :request_success) %></strong></p>
+    <% else %>
+      <%= form_tag(Routes.problems_path(@conn, :request, @id), method: "POST") do %>
+        <button type="submit">Request a solution for this problem</button>
+      <% end %>
+    <% end %>
+  </article>
+</section>

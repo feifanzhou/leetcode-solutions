@@ -10,6 +10,16 @@ use Mix.Config
 config :leetcode_solutions,
   ecto_repos: [LeetcodeSolutions.Repo]
 
+config :leetcode_solutions, LeetcodeSolutionsWeb.Mailer,
+  adapter: Bamboo.SMTPAdapter,
+  server: "smtp.sendgrid.com",
+  port: 587,
+  username: "apikey",
+  password: {:system, "SENDGRID_PASSWORD"},
+  tls: :if_available,
+  ssl: false,
+  retries: 5
+
 # Configures the endpoint
 config :leetcode_solutions, LeetcodeSolutionsWeb.Endpoint,
   url: [host: "localhost"],
