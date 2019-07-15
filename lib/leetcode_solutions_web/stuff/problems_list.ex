@@ -28,7 +28,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsList do
     end
 
     defp list_problems_from_filesystem() do
-      with {:ok, ls} <- File.ls(Path.relative_to_cwd("../problems")) do
+      with {:ok, ls} <- File.ls(Path.relative_to_cwd("problems")) do
         regex = ~r/^(\d{4})-([A-Za-z0-9-_.]+)$/
 
         ls

@@ -3,7 +3,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
   alias LeetcodeSolutionsWeb.ProblemsList, as: ProblemsList
 
   def index(conn, _params) do
-    case File.read(Path.relative_to_cwd("../problems/README.md")) do
+    case File.read(Path.relative_to_cwd("problems/README.md")) do
       {:ok, markdown} ->
         render(conn, "index.html",
           title: "Problems",
@@ -19,7 +19,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
   def show(conn, %{"id" => id}) do
     with problem when not is_nil(problem) <- problem_for_id(id),
          folder_name <- problem.folder_name,
-         folder_path = Path.relative_to_cwd(Path.join("../problems", folder_name)),
+         folder_path = Path.relative_to_cwd(Path.join("problems", folder_name)),
          {:ok, markdown} <-
            LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md"),
          title <- problem.name <> " (#" <> Integer.to_string(problem.number) <> ")" do
