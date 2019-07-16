@@ -1,3 +1,6 @@
+# How does this work?
+The easiest way to use to site is to browse to a specific problem on [Leetcode](https://leetcode.com/problemset/all/), and then replace `leetcode.com` in the URL with `leetcodesolutions.com`. For example, if you're working on [https://leetcode.com/problems/reverse-integer/](https://leetcode.com/problems/reverse-integer/), the corresponding solution on this site is at [https://leetcodesolutions.com/problems/reverse-integer/](https://leetcodesolutions.com/problems/reverse-integer/).
+
 # What? Why? Who?
 Oh hai 👋
 
