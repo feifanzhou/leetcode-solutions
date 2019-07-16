@@ -1,5 +1,6 @@
 <section>
   <article>
+    <p><a href="https://leetcode.com/problems/<%= @slug %>" target="_blank">Go to &ldquo;<%= @title %>&rdquo; on Leetcode &nearr;</a></p>
     <%= raw(Earmark.as_html!(@markdown, %Earmark.Options{code_class_prefix: "language-"})) %>
   </article>
 </section>

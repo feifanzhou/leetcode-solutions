@@ -23,7 +23,7 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
          {:ok, markdown} <-
            LeetcodeSolutionsWeb.MarkdownCat.preprocess_markdown(folder_path, "README.md"),
          title <- problem.name <> " (#" <> Integer.to_string(problem.number) <> ")" do
-      render(conn, "show.html", title: title, markdown: markdown)
+      render(conn, "show.html", slug: problem.slug, title: title, markdown: markdown)
     else
       {:error, reason} ->
         text(conn, "Error reading readme for " <> id <> ": " <> Atom.to_string(reason))
