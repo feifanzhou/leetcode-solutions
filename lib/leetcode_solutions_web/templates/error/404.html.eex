@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143875851-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-143875851-1');
+    </script>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Leetcode Solutions contains explanations and answers to algorithms and data structure interview questions." />
+    <title>Page not found | Leetcode Solutions</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <style>
+      .tumbeast {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <section class="navigation container">
+        <nav role="navigation">
+          <ul>
+            <li><a href="<%= Routes.problems_path(@conn, :index) %>">All Problems</a></li>
+          </ul>
+        </nav>
+        <a href="<%= Routes.page_path(@conn, :index) %>" class="navigation-home-link">
+          <h1>Leetcode Solutions</h1>
+        </a>
+      </section>
+    </header>
+    <main role="main" class="container">
+      <div class="tumbeast"><img src="<%= Routes.static_path(@conn, "/images/404.png") %>" alt="OMG 404 not found" width="160" height="202" /%></div>
+      <h1>Page not found</h1>
+      <p>You've ended up on a page that doesn't exist on this site! Clicks the links in the top navigation to go to the homepage or the list of problems I've gotten to.</p>
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
