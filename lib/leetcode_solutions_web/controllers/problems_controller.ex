@@ -33,8 +33,8 @@ defmodule LeetcodeSolutionsWeb.ProblemsController do
     end
   end
 
-  def request(conn, %{"id" => id}) do
-    LeetcodeSolutionsWeb.Emails.request_solution(id) |> LeetcodeSolutionsWeb.Mailer.deliver_now()
+  def request(conn, %{"id" => id, "email" => email}) do
+    LeetcodeSolutionsWeb.Emails.request_solution(id, email) |> LeetcodeSolutionsWeb.Mailer.deliver_now()
 
     conn
     |> put_flash(:request_success, "Your request has been noted!")

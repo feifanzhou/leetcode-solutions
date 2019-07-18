@@ -57,6 +57,27 @@ code.inline {
   padding: 0 0.3rem;
 }
 
+fieldset {
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0.3rem;
+  border-left:
+}
+
+input[type='text'], input[type='email'] {
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  margin: 0;
+  padding: 0.2rem 0.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1.7rem;
+}
+
 pre {
   border-radius: 0.3rem;
   line-height: 1.5rem;

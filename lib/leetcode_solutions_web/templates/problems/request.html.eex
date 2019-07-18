@@ -6,7 +6,14 @@
       <p class="alert"><strong><%= get_flash(@conn, :request_success) %></strong></p>
     <% else %>
       <%= form_tag(Routes.problems_path(@conn, :request, @id), method: "POST") do %>
-        <button type="submit">Request a solution for this problem</button>
+        <fieldset>
+          <label for="email">
+            How can I get back to you once I've written a solution to this problem?
+            <br />
+            <input type="email" name="email" placeholder="ada@example.com" />
+          </label>
+          <button type="submit">Request a solution for this problem</button>
+        </fieldset>
       <% end %>
     <% end %>
   </article>

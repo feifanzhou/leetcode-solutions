@@ -31,6 +31,15 @@
     color:#ccc;
   }
 
+  fieldset {
+    border-left: 0.4rem solid #67cdcc;
+  }
+
+  input[type='text'], input[type='email'] {
+    background: transparent;
+    border: 1px solid #7ec699;
+  }
+
   pre {
     border-left: 0.4rem solid #67cdcc;
   }

@@ -22,6 +22,15 @@ code.inline {
   color:#657b83;
 }
 
+fieldset {
+  border-left: 0.4rem solid #073642;
+}
+
+input[type='text'], input[type='email'] {
+  background: #fdf6e3;
+  border: 1px solid #eee8d5;
+}
+
 pre {
   border-left: 0.4rem solid #073642;
 }
