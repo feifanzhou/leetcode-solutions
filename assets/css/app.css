@@ -122,8 +122,8 @@ main h1 {
   padding-bottom: 1rem;
 }
 
-.navigation h1 {
-  margin-bottom: 0;
+#navigation-home-link-logo {
+  display: block;
 }
 
 .problems-list {

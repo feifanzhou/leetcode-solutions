@@ -21,15 +21,21 @@ const PRISM_SOLARIZED_LIGHT_CSS =
 const PRISM_TOMORROW_NIGHT_CSS = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism-tomorrow.min.css';
 const prismLinkTag = document.getElementById('prism-theme');
 
+const WORDMARK_LIGHT = '/images/wordmark-light.svg';
+const WORDMARK_DARK = '/images/wordmark-dark.svg';
+const wordmarkImgtag = document.getElementById('navigation-home-link-logo');
+
 // https://kevinchen.co/blog/support-macos-mojave-dark-mode-on-websites/
 const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 function toggleDarkMode(e) {
   if (e.matches) {
     // Is dark mode
     prismLinkTag.href = PRISM_TOMORROW_NIGHT_CSS;
+    wordmarkImgtag.src = WORDMARK_DARK;
   } else {
     // Is light mode
     prismLinkTag.href = PRISM_SOLARIZED_LIGHT_CSS;
+    wordmarkImgtag.src = WORDMARK_LIGHT;
   }
 }
 darkModeQuery.addListener(toggleDarkMode);
