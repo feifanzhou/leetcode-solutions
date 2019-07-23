@@ -65,6 +65,12 @@ fieldset {
   border-left:
 }
 
+footer {
+  border-top: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 input[type='text'], input[type='email'] {
   border-radius: 0.3rem;
   font-size: 1rem;

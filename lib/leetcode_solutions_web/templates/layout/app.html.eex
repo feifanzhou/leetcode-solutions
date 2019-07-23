@@ -44,6 +44,9 @@
     </header>
     <main role="main" class="container">
       <%= render @view_module, @view_template, assigns %>
+      <footer>
+        <p>&#9753; <em>Come say hi or let me know if anything isn't working <a href="https://twitter.com/FeifanZ" target="_blank">on Twitter</a></em> &#10087;</p>
+      </footer>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
 
