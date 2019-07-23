@@ -13,3 +13,5 @@ I taught myself to code when the original iPhone SDK came out, first learning C 
 I've spent a few years as an engineer at [a few startups](https://linkedin.com/in/feifanz), and I'll be joining an exciting new team at [Stripe](https://stripe.com/issuing) in a few weeks. I also [tweet occasionally](https://twitter.com/FeifanZ) and [write about other things](https://feifan.blog).
 
 Thanks for reading, and I hope you'll find something useful here! 💛
+
+_(BTW, everything for this site, including the server, original content, and assets, are [on Github](https://github.com/feifanzhou/leetcode-solutions)!)_
