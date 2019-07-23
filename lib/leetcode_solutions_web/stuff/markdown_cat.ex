@@ -4,7 +4,7 @@ defmodule LeetcodeSolutionsWeb.MarkdownCat do
 
     with {:ok, markdown} <- File.read(filepath),
          catted_markdown =
-           String.replace(markdown, ~r/@cat ([a-z0-9-\.]+)/, fn match ->
+           String.replace(markdown, ~r/@cat ([a-z0-9-_\.]+)/, fn match ->
              filename = match |> String.split("@cat ") |> Enum.at(1)
 
              case File.read(Path.join(folder_path, filename)) do

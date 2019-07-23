@@ -7,7 +7,7 @@
     background: rgb(30, 30, 30);
   }
 
-  a {
+  a, a code.inline {
     color: #7ec699;
   }
 
