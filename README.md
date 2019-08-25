@@ -10,7 +10,7 @@ The idea for _this_ site came up as I recently spent several weeks [preparing fo
 
 I taught myself to code when the original iPhone SDK came out, first learning C and Objective-C before moving into web technologies. Early on, as I was learning the iPhone SDK piece-by-piece from various copy-paste-and-run tutorials, I wished for a single source that would explain everything from the ground up. [I created one](https://cupsofcocoa.wordpress.com) when I couldn't find what I was looking for. This site is sort of a spiritual successor to that.
 
-I've spent a few years as an engineer at [a few startups](https://linkedin.com/in/feifanz), and I'll be joining an exciting new team at [Stripe](https://stripe.com/issuing) in a few weeks. I also [tweet occasionally](https://twitter.com/FeifanZ) and [write about other things](https://feifan.blog).
+I've spent a few years as a software engineer at [a few startups](https://linkedin.com/in/feifanz), and I'm now an engineer at [Stripe](https://stripe.com/issuing). I also [tweet occasionally](https://twitter.com/FeifanZ) and [write about other things](https://feifan.blog).
 
 Thanks for reading, and I hope you'll find something useful here! 💛
 
